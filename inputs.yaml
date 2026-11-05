@@ -1,0 +1,31 @@
+# Deal assumptions for a hypothetical company ("TargetCo").
+# All money values are in $ millions. Change these and re-run lbo.py.
+
+company: TargetCo (hypothetical mid-market business services company)
+
+entry:
+  ltm_ebitda: 50.0          # EBITDA in the year before the deal
+  entry_multiple: 10.0      # purchase price = 10.0x EBITDA
+  transaction_fees_pct: 0.02  # fees as % of purchase price
+  minimum_cash: 5.0         # cash left on the balance sheet at close
+
+financing:
+  senior_debt_multiple: 4.0   # senior debt = 4.0x EBITDA
+  senior_interest_rate: 0.08
+  senior_mandatory_amort_pct: 0.05   # 5% of the original loan repaid each year
+  sub_debt_multiple: 1.5      # subordinated notes = 1.5x EBITDA
+  sub_interest_rate: 0.11     # no amortization, repaid at exit
+  cash_sweep_pct: 1.0         # 100% of leftover cash goes to repay senior debt
+
+operations:
+  years: 5
+  starting_revenue: 250.0
+  revenue_growth: [0.08, 0.08, 0.07, 0.06, 0.05]
+  ebitda_margin: [0.20, 0.205, 0.21, 0.215, 0.22]
+  da_pct_revenue: 0.03        # depreciation & amortization
+  capex_pct_revenue: 0.035
+  nwc_pct_revenue: 0.10       # net working capital as % of revenue
+  tax_rate: 0.25
+
+exit:
+  exit_multiple: 10.0         # sell at the same multiple we bought at
